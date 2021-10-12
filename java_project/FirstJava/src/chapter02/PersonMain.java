@@ -4,13 +4,13 @@ public class PersonMain {
 	public static void main(String[] args) {
 
 		Person p = new Person();
-		p.setMemberName("Çö¼ö");
+		p.setMemberName("í˜„ìˆ˜");
 		p.setPhoneNumber("01077445588");
 		p.setJuminNumber(9422115554478L);
 
-		System.out.println("ÀÌ¸§: " + p.getMemberName());
-		System.out.println("Æù¹øÈ£: " + p.getPhoneNumber());
-		System.out.println("ÁÖ¹Î¹øÈ£: " + p.getJuminNumber());
+		System.out.println("ì´ë¦„: " + p.getMemberName());
+		System.out.println("í°ë²ˆí˜¸: " + p.getPhoneNumber());
+		System.out.println("ì£¼ë¯¼ë²ˆí˜¸: " + p.getJuminNumber());
 
 		System.out.println("=======================");
 		p.printData();
