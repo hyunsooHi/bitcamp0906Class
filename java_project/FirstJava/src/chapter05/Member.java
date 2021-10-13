@@ -27,15 +27,30 @@ public class Member {
 		this.address = address;
 
 	}
-	
-	public void printMember() {
-		System.out.println("이름: "+name);
-		System.out.println("전화번호: "+phoneNumber);
-		System.out.println("학년: "+grade);
-		
+
+	Member(String name, String phoneNumber, String special, int grade, String email) {
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.special = special;
+		this.grade = grade;
+		this.email = email;
+
 	}
+
+	public void printMember() {
+		System.out.println("이름: " + name);
+		System.out.println("전화번호: " + phoneNumber);
+		System.out.println("전공: " + special);
+		System.out.println("학년: " + grade);
+		System.out.println("이메일: " + email);
+		System.out.println("생일: " + birthDay);
+		System.out.println("주소: " + address);
+
+	}
+
 	public static void main(String[] args) {
-		Member mamber = new Member("현수","01044333443");
-		
+		Member member = new Member("현수", "01044333443", "전자", 4, "baea@g@#c.c");
+		member.printMember();
+
 	}
 }
