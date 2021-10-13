@@ -34,5 +34,8 @@ public class Member {
 		System.out.println("학년: "+grade);
 		
 	}
-
+	public static void main(String[] args) {
+		Member mamber = new Member("현수","01044333443");
+		
+	}
 }
