@@ -33,46 +33,57 @@ public class Contect {
 	private String address;
 	private String birthDay;
 	private String group;
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public String getBirthDay() {
 		return birthDay;
 	}
+
 	public void setBirthDay(String birthDay) {
 		this.birthDay = birthDay;
 	}
+
 	public String getGroup() {
 		return group;
 	}
+
 	public void setGroup(String group) {
 		this.group = group;
 	}
-	
+
 	public Contect(String name, String phoneNumber, String email, String address, String birthDay, String group) {
-		
+
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
@@ -80,14 +91,24 @@ public class Contect {
 		this.birthDay = birthDay;
 		this.group = group;
 	}
-	
+
+	public void printContect() {
+		System.out.println("이름: " + name);
+		System.out.println("폰번호: " + phoneNumber);
+		System.out.println("이메일: " + email);
+		System.out.println("주소: " + address);
+		System.out.println("생일: " + birthDay);
+		System.out.println("그룹: " + group);
+
+	}
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Content content = new Content();
-		
-		Contect.setName(scanner.nextLine());
-		
+		Contect contect = new Contect("현수", "040340304", "dwfwe@de.e", "서울", "3월3월", "그룹");
+		System.out.println("이름을 입력 하시오");
+		contect.setName(scanner.nextLine());
+		contect.printContect();
+
 	}
-	
 
 }
