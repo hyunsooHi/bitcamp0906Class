@@ -93,6 +93,8 @@ public class Contact {
 		this.group = group;
 	}
 
+	public Contact() {	}
+	
 	public void printContact() {
 		System.out.println("이름: " + name);
 		System.out.println("폰번호: " + phoneNumber);
