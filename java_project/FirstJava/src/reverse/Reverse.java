@@ -26,10 +26,20 @@ public class Reverse {
 		//이 문자열을 이용하여 중간에 삽입된 – 를 뺀 String 인스턴스를 생성.
 		
 		StringBuilder str2 = new StringBuilder("990929-1010123");
+		
+		
+		
 		str2.deleteCharAt(6);
 		
 		System.out.println(str2);
 		
+		String string = "990929-1010123";
+		
+		System.out.println(string.indexOf('-'));
+		string.replace("-", "");
+		
+				
+				
 		
 		
 	}

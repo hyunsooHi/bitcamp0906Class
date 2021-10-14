@@ -9,18 +9,21 @@ package chapter05;
 //④ main() 메소드에서 두 가지 생성자를 이용해서 인스턴스 생성하고 출력 메소드를 통해 저장된 데이터 출력
 
 public class Member {
-	String name;
-	String phoneNumber;
-	String special;
-	int grade;
-	String email;
-	String birthDay;
-	String address;
+	// 변수
+	private String name;
+	private String phoneNumber;
+	private String major;
+	private int grade;
+	private String email;
+	private String birthDay;
+	private String address;
 
-	Member(String name, String phoneNumber, String special, int grade, String email, String birthDay, String address) {
+	// 변수 다음 생성자 암묵적인약속
+	public Member(String name, String phoneNumber, String major, int grade, String email, String birthDay,
+			String address) {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
-		this.special = special;
+		this.major = major;
 		this.grade = grade;
 		this.email = email;
 		this.birthDay = birthDay;
@@ -28,29 +31,40 @@ public class Member {
 
 	}
 
-	Member(String name, String phoneNumber, String special, int grade, String email) {
-		this.name = name;
-		this.phoneNumber = phoneNumber;
-		this.special = special;
-		this.grade = grade;
-		this.email = email;
+	public Member(String name, String phoneNumber, String major, int grade, String email) {
+//		this.name = name;
+//		this.phoneNumber = phoneNumber;
+//		this.major = major;
+//		this.grade = grade;
+//		this.email = email;
+//		
+		this(name, phoneNumber, major, grade, email, "생일정보없음", "주소없음");
 
 	}
 
+	// 생성자 다음 메소드
 	public void printMember() {
 		System.out.println("이름: " + name);
 		System.out.println("전화번호: " + phoneNumber);
-		System.out.println("전공: " + special);
+		System.out.println("전공: " + major);
 		System.out.println("학년: " + grade);
 		System.out.println("이메일: " + email);
-		System.out.println("생일: " + birthDay);
-		System.out.println("주소: " + address);
+
+		// null이면 비교
+		if (this.birthDay == null) {
+			System.out.println("생일: 생일정보없음");
+
+		} else {
+			System.out.println("생일: " + birthDay);
+
+		}
+		if (this.address == null) {
+			System.out.println("주소: 주소정보없음");
+		} else {
+			System.out.println("주소: " + address);
+		}
 
 	}
 
-	public static void main(String[] args) {
-		Member member = new Member("현수", "01044333443", "전자", 4, "baea@g@#c.c");
-		member.printMember();
-
-	}
+	
 }
