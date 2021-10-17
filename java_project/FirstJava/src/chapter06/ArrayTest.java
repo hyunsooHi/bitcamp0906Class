@@ -59,6 +59,19 @@ public class ArrayTest {
 		System.out.println("2차원배열출력");
 		addOneDArr(arr3, 10);
 		
+		//for-each
+		for(int i=0; i<arr.length;i++) {
+			System.out.println(arr[i]);
+			
+		}
+		
+		for(int num:arr) {//요소의 개수만큼 무조건 돈다
+			System.out.println(num);
+		}
+		
+		
+		
+		
 	}
 	
 	
