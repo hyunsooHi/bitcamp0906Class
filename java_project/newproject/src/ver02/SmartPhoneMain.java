@@ -2,6 +2,7 @@ package ver02;
 
 public class SmartPhoneMain {
 
+	
 //	2. main()메소드를 아래의 요구조건을 정의해봅니다.
 //	① SmartPhone 클래스의 인스턴스를 생성합니다.
 //	② 사용자로부터 입력을 받아 Contact 인스턴스를 생성해서 SmartPhone 클래스의 인스턴스가 가지고 있는 배열에 추가합니다.
@@ -12,6 +13,7 @@ public class SmartPhoneMain {
 //	⑦ 배열의 요소를 수정해 봅시다.
 
 	public static void main(String[] args) {
+
 //		① SmartPhone 클래스의 인스턴스를 생성합니다.
 		SmartPhone phone = new SmartPhone(10);
 		// ② 사용자로부터 입력을 받아 Contact 인스턴스를 생성해서
