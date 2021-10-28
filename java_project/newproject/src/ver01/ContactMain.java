@@ -27,13 +27,13 @@ public class ContactMain {
 		contact2.setEmail("nam@naver.com");
 		contact2.setAddress("서울");
 		contact2.setBirthDay("2000-10-10");
-		contact2.setGroup("친구");
+		contact2.setGroup("친구@@@@@@@");
 		
 		System.out.println("데이터변경 (추가)");
 		contact2.printContact();
 		
 		//오버라이딩해서 데이터 잘 들어갔는지 확인용으로 쓴대!
-		contact1.toString();
+		System.out.println(contact1);
 		
 
 	}
