@@ -60,9 +60,5 @@ public class CompanyContact extends Contact {
 	}
 	
 	
-	
-	
-	
-	
 
 }
