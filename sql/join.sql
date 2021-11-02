@@ -80,14 +80,22 @@ where ename='SCOTT'
 select *
 from emp;
 
-select b.ename , b.deptno 
+select a.ename , b.ename , a.depthno , b.deptno 
 from emp a , emp b
-where (select deptno from emp where ename='SCOTT') =  b.deptno
+where a.deptno =  b.deptno
 ;
 
-select deptno
-from emp
-where ename='SCOTT'
+select *
+from emp a , emp b
+where a.deptno =  b.deptno and b.ename = 'SCOTT'
+;
+
+
+
+
+SELECT e.ename, e.deptno, i.ename
+FROM emp e, emp i
+where e.deptno = i.deptno and e.ename = 'SCOTT'
 ;
 
 select *
@@ -100,13 +108,21 @@ where ename = 'SCOTT';
 
 select *
 from emp a , emp b
-where a.hiredate < b.hiredate;
+where a.hiredate < b.hiredate and b.ename='WARD';
 
 select *
 from emp;
 
-​
 
-​
+--42. SELF JOIN 을 사용하여 관리자보다 먼저 입사한 모든 사원의 이름 및 입사일을 관리자의 이름 및 입사일과 함께 출력하시오.
 
-42. SELF JOIN 을 사용하여 관리자보다 먼저 입사한 모든 사원의 이름 및 입사일을 관리자의 이름 및 입사일과 함께 출력하시오.
+select *
+from emp a,emp b
+where a.hiredate > b.hiredate and a.mgr = b.empno
+;
+
+
+
+
+
+
