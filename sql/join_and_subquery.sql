@@ -1,27 +1,52 @@
 --1 마당서점의 고객이 요구하는 다음질문에대해SQL 문을작성하시오.
 
 --(5) 박지성이 구매한 도서의 출판사수
---custid 1 구하고 bookid 132 구하고 
-select *
-from book
-;
-
-select *
-from orders
-;
-
-select *
-from customer
+--커스토머에서 custid 1 구하고 올더에서 bookid 132 구하고 북에서 또 구해야함  
+select count(PUBLISHER)
+from book b,orders o,customer c
+where 
+    o.custid = c.custid 
+    and c.name = '박지성' 
+    and o.bookid = b.bookid
 ;
 
 
+--(6) 박지성이구매한도서의이름, 가격, 정가와판매가격의차이
+select *
+from book ;
 
-(6) 박지성이구매한도서의이름, 가격, 정가와판매가격의차이
+select *
+from orders;
+
+select *
+from customer;
+
+select b.bookname , b.price , b.price - o.saleprice price_gap
+from book b , orders o , customer c
+where c.name = '박지성' and 
+o.custid = c.custid and
+o.bookid = b.bookid
+;
+
+--(7) 박지성이구매하지않은도서의이름 이건 어떻게 구해? 북 목록에서 박지성이 구매한 도서를 제외시켜 제외시키는 명령어가 뭔데 북 아이디를 제외시켜
+select *
+from book ;
+
+select *
+from orders;
+
+select *
+from customer;
 
 
-​
+select bookname
+from book 
+where bookid not in 
+(select b.bookid
+from book b , orders o , customer c
+where c.custid = o.custid and o.bookid = b.bookid and c.name = '박지성')
+;
 
-(7) 박지성이구매하지않은도서의이름
 
 
 ​

@@ -16,6 +16,24 @@ select * from dept where 1=0
 insert into dept01 (deptno , dname , loc)
     values(10, 'DEV' , 'SEOUL');
 
+--모든컬럼의 데이터를 입력할경우 컬럼명 생략가능
+insert into dept01 values(10, 'DEV' , 'SEOUL');
+
+--------------------------------
+--서브쿼리를 이용한 데이터 입력
+
+drop table dept02 ;
+create table dept02
+as 
+select *
+from dept where 1=2
+;
+select * from dept02;
+
+--서브쿼리를 이용해서 데이터 삽입
+insert into dept02 select * from dept;
+select * from dept02;
+
 
 
 
