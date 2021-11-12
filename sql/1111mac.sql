@@ -20,8 +20,35 @@ create table users(
     
 );
 
+create table orderdeli(
+
+    oid number(6) constraint order_id_pk primary key,
+    oprice integer,
+    odate timestamp ,
+    payment varchar2(2),
+    otype varchar2(3),
+    id number(6),
+    mid number(6),
+    addressnum number(6)
+    
+);
+
+insert into orderdeli
+(oid,oprice,odate,payment,otype,id,mid,addressnum)
+values(1,'user2','수현',1,'서울',321,231);
+
+
+select *
+from orderdeli;
+
 select *
 from users;
+
+insert into users
+(id,userid,username,password,address,phone,email)
+values(2,'user2','수현',1,'서울',321,231);
+
+
 
 commit;
 

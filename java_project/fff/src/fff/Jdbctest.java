@@ -1,5 +1,7 @@
 package fff;
 
+import java.sql.Date;//이거추가함
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,13 +22,15 @@ public class Jdbctest {
 	public static void main(String[] args) throws SQLException {
 		
 		
-		Menupan[] menupan = new Menupan[10];
-
+		//Menupan[] menupan = new Menupan[10];
+		ArrayList<Menupan> menupanlist = new ArrayList<Menupan>();
 
 		Connection conn = null; // 연결
 		Statement stmt = null; // select
 		ResultSet rs = null;
-
+		
+		int line_cnt=0;
+		String corm = "h";
 		
 		try {
 //			1.드라이버 로드:프로그램에서 한번만 실행해주면 된다
@@ -49,7 +53,7 @@ public class Jdbctest {
 			rs = stmt.executeQuery(sql);
 			// 반복을통해 행단위데이터검색
 			
-			int i=0;
+			
 			
 			while (rs.next()) {
 				int mid = rs.getInt("mid");
@@ -58,12 +62,17 @@ public class Jdbctest {
 				int mnum = rs.getInt("mnum");
 				String mtype = rs.getString("mtype");
 				System.out.print(mid + "\t" + mname + "\t" + mprice + "\t" + mnum +"\t" + mtype +"\n");
-				menupan[i] = new Menupan(mid, mname, mprice,mnum,mtype);
+				
+				
+				
+				menupanlist.add(new Menupan(rs.getInt("mid"), rs.getString("mname"), rs.getInt("mprice"), rs.getInt("mnum"), rs.getInt("mprice") * rs.getInt("mnum"),rs.getString("mtype")));
+				//menupan[line_cnt] = new Menupan(mid, mname, mprice,mnum,mtype);
 				//System.out.println("주문가격"+menupan[i].mprice+"주문개수"+menupan[i].mnum+"\n"+"\n");
 				//list.add(menupan);
-				i++;
+				//line_cnt++;
 				
 			}
+			System.out.println(menupanlist);
 
 //			4. 종료 : close()
 
@@ -95,31 +104,23 @@ public class Jdbctest {
 		
 		}
 		
-
-//		===========
-//		선택한 메뉴
-//		불고기버거 3개 6000원
-//		사이다1개    1천원
-//		감자튀김1개 	1천원
-//
-//		가격 4400원
-//		==========
-//
-//		1. 주문취소 (로그인으로 돌아가기) (선택한 메뉴 초기화됨)
-//		2. (이전) 메뉴로 돌아가기 (선택한 메뉴 초기화됨)
-//		3. 주문완료
-//
-//		============
+		System.out.println(line_cnt);
+		
 		System.out.println("============");
 		System.out.println("선택한 메뉴");
-		//for(i=0;i<)
-		System.out.println(menupan[0].mname +"    " +menupan[0].mnum+" 개  "+ menupan[0].mprice * menupan[0].mnum+" 원"+"");
-		System.out.println(menupan[1].mname +"    " +menupan[1].mnum+" 개  "+ menupan[1].mprice * menupan[1].mnum+" 원"+"");
 		
+		int total_price = 0;
+		
+//		for(int i=0;i<line_cnt;i++) {
+//			
+//			System.out.println(menupan[i].mname +"    " +menupan[i].mnum+" 개  "+ menupan[i].mprice * menupan[i].mnum+" 원"+"");
+//			total_price = total_price + menupan[i].mprice * menupan[i].mnum;
+//		}
 		System.out.println("총가격");
-		int total_price = menupan[1].mprice * menupan[1].mnum + menupan[0].mprice * menupan[0].mnum;
-		
 		System.out.println(total_price +"원"+"");
+		
+		//엔드 셀렉트메소드  주문완료인지 고름
+		
 		System.out.println("============");
 		
 		System.out.println("1. 주문취소 ");
@@ -135,7 +136,7 @@ public class Jdbctest {
 			//2. 이전 메뉴로 돌아가기();
 		}
 		if (select == 3){
-			//3. 주문완료();
+			//3. 주문완료(); 캐시셀렉트 메소드 현금카드고름
 			System.out.println("============");
 			System.out.println("결재수단을 입력해주세요 ");
 			System.out.println("1. 카드 ");
@@ -146,11 +147,11 @@ public class Jdbctest {
 			
 			if (selc == 1){
 				//1. 카드();
-				//cardcash = "카드";
+				corm = "c";
 			}
 			if (selc == 2){
 				//2. 현금();
-				//cardcash = "현금";
+				corm = "m";
 			}
 			
 		}
@@ -185,15 +186,18 @@ public class Jdbctest {
 			// 3. 작업 : CRUD -> PreparedStatement객체 생성 , 먼저 SQL 등록 후 사용
 			String sql = "insert into orderdeli values (?, ?, ?, ?, ?, ?, ?, ?)";
 			
+			long miliseconds = System.currentTimeMillis();
+	        Date date = new Date(miliseconds);
+	        System.out.println(date);
 			
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1,  1);
+			pstmt.setInt(1,  2);
 			pstmt.setInt(2,  total_price);
-			pstmt.setString(3, "11/10");
-			pstmt.setString(4, "카드");
-			pstmt.setString(5, "PUSAN");
+			pstmt.setDate(3, date);
+			pstmt.setString(4, corm);
+			pstmt.setString(5, corm);
 			pstmt.setInt(6,  90);
 			pstmt.setInt(7,  90);
 			pstmt.setInt(8,  90);
