@@ -44,6 +44,27 @@ public class Cart {
 			}
 
 			System.out.println("최종금액: " + totalPrice);
+			
+			System.out.println("=============================");
+			System.out.println("1 수량 변경");
+			System.out.println("2 주문 취소 >>>메인메뉴();로 보냄");
+			System.out.println("3 결재하기 >>>결재하기();");
+			System.out.println("=====================");
+
+			int select;
+			select = scanner.nextInt();
+			if(select == 1) {
+				//수량변경메소드
+				
+			}
+			if(select == 2) {
+				//주문 취소메소드
+			}
+			if(select == 3) {
+				//결재하기메소드
+			}
+			
+			
 
 		} catch (SQLException e) {
 
