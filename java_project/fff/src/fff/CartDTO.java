@@ -8,7 +8,7 @@ public class CartDTO {
 	public int mnum;
 	public String mtype;
 
-	public CartDTO(int mid, String mname, int mprice, int mnum, String mtype) {
+	public CartDTO(int mid, String mname, int mprice, int mnum, String mtype) {//mid , 메뉴이름 , 메뉴가격, 메뉴개수 , 메뉴타입(햄버거)
 		this.mid = mid;
 		this.mname = mname;
 		this.mprice = mprice;

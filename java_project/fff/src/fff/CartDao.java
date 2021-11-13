@@ -41,7 +41,7 @@ public class CartDao {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				cartlist = new CartDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5));
+				cartlist = new CartDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5));//mid , 메뉴이름 , 메뉴가격, 메뉴개수 , 메뉴타입(햄버거)
 			}
 
 		} catch (SQLException e) {

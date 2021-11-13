@@ -53,7 +53,9 @@ values(2,'user2','수현',1,'서울',321,231);
 commit;
 
 select *
-from macdo;
+from macdo
+where mid=1
+;
 
 insert into macdo
 (mid,mname,mprice,mnum,mtype)
