@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스 속성</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1 {
+            background-color: indianred;
+
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 10px solid indigo;
+            margin: 20px;
+        }
+        #box2 {
+            background-color: yellow;
+
+            width: 100px;
+            height: 100px;
+            
+            border: 10px solid violet;
+        }
+
+    </style>
+
+    <style>
+        #box{
+            background-image:url(mini1.jpg);
+            background-size:100%;
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            display: inline-block; /*none,block,inline,inline-block*/
+        }
+
+        body{
+            background-image:url(mini1.jpg);
+            background-size:100px;
+            background-position: bottom right;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+
+
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <span style="background-color: tomato;">더미 객체</span>
+    <div id="box" >대상 객체</div>
+    <span style="background-color: tomato;">더미 객체</span>
+    <div>
+        div
+    </div>
+
+
+
+
+
+
+
+    <hr>
+
+    <div id="box1">
+        box1
+    </div>
+    <div id="box2">
+        box2
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="ko">
+    <title>기본 선택자</title>
+
+
+    <style>
+        /* 선택자 {속성이름:속성값;속성이름:속성값} */
+        * {
+            /* color: blue; */
+            /* background-color: brown; */
+        }
+
+        h1 {
+            background-color: cadetblue;
+        }
+
+        #title {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .bold1 {
+            font-weight: lighter;
+        }
+
+        p {
+            color: cornflowerblue;
+        }
+
+        body,
+        h1,
+        p {
+            margin: 0px;
+        }
+
+        #header {
+            width: 300px;
+            height: 100px;
+
+            background-color: darkkhaki;
+            /* top right bottom left */
+            margin: 10px 20px 30px 40px;
+            margin: 0 auto;
+            /* 상하는 0 좌우는 오토 오토라서 절반이라서 화면크기에따라 움직임 */
+        }
+
+        div#contents {
+            width: 300px;
+            height: 500px;
+
+            background-color: green;
+            /* top right bottom left */
+            margin: 10px 20px 30px 40px;
+            margin: 0 auto;
+        }
+
+        h1.title {
+            color: ivory;
+            font-weight: lighter;
+        }
+    </style>
+    <style>
+        /* 속성선택자 */
+        input[type] {
+            border: 5px solid springgreen;
+        }
+
+        input[type=password] {
+            background-color: violet;
+        }
+    </style>
+
+    <style>
+        #header1 h1 {
+            color: yellow;
+            background-color: white;
+        }
+
+        #section h1 {
+            color: tomato;
+        }
+
+        #header1>h1 {
+            color: blueviolet;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        /* <!-- 동위선택자 --> */
+        #head1+h1 {
+            color: darkblue;
+        }
+
+        #head1~h2 {
+            color: darkolivegreen;
+        }
+    </style>
+    <style>
+        /* 반응선택자 */
+
+        /* 마우스 커서가 특정 요소 위로 올라갔을 때 반응 */
+
+        h3:hover{
+            color: darkslategray;
+        }
+
+        h3:active{
+            color: deeppink;
+            background-color: firebrick;
+        }
+
+    </style>
+
+    <!-- 상태선택자 -->
+    <style>
+        input:enabled{
+            border: 5px solid #cc1e1e;
+        }
+
+        input:disabled{
+            background-color: dimgray;
+        }
+
+        input:focus{
+            background-color: goldenrod;
+            border: 22px greenyellow;
+        }
+    
+        #article {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        
+
+    </style>
+    <style>
+        #input[type=checkbox]:checked{
+            width: 5px;
+            height: 45px;
+        }
+        
+        li:nth-child(2n){
+            background-color: lawngreen;
+        }
+
+        li:first-child{
+            background-color: hotpink;
+            color: lavenderblush;
+
+            border-radius: 40px 0px 0px 40px;
+            
+        }
+        li:last-child{
+            background-color: hotpink;
+            color: lavenderblush;
+            border-radius: 0px 40px 40px 0px;
+        }
+
+        /* 리스트태그 수평방향으로나열 */
+        ul{
+            overflow: hidden;
+
+            /* 리스트 스타일 */
+            list-style: none;
+
+
+
+
+        }
+        li{
+            float :left;
+            padding: 10px 30px;
+        }
+
+
+
+        #photo{
+            border-radius: 50%;
+            border: 3px solid;
+        }
+    </style>
+
+    <style>
+        /* 링크선택 */
+        a:link{
+            color: green;
+            text-decoration: none;
+        }
+        a:visited{
+            color: greenyellow;
+        }
+        a:hover{
+            color: green;
+            text-decoration: underline;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <a href="test">네이버</a>
+    <a>네이버</a>
+    <a href="https://www.naver.com">NAVER</a>
+    
+    <img id="photo" src="star.jpg" alt="">
+    <hr>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        
+    </ul>
+    
+
+
+
+    <hr>
+    <input type="checkbox"> 기사 가리기
+    <div id="article">
+        <h1>지스타2021 슈퍼켓 어쩌고 그래니 어d</h1>
+        <p>지스타가 이번 mou를통해 슈퍼켓이 
+            ㅇ라알낭람ㄴ알ㅇ날
+            지스타가 이번 mou를통해 슈퍼켓이 
+            ㅇ라알낭람ㄴ알ㅇ날
+            지스타가 이번 mou를통해 슈퍼켓이 
+            ㅇ라알낭람ㄴ알ㅇ날
+            지스타가 이번 mou를통해 슈퍼켓이 
+            ㅇ라알낭람ㄴ
+            서비스하는 어쩌고 먼저 위믹스가 그랬다</p>
+    </div>
+
+    <hr>
+    <input> <input disabled>
+    <hr>
+    
+    <h3>ggcggg</h3>
+    
+
+    <hr>
+
+
+    <div>
+        <h1 id="head1">Hesssader1 - 1</h1>
+        <h1>Header1 - 2</h1>
+        <h2>Header2 - 1</h2>
+        <h2>Header2 - 2</h2>
+        <h2>Header2 - 3</h2>
+        <h2>Header2 - 4</h2>
+        <h2>Header2 - 5</h2>
+    </div>
+    
+
+    <div id="header1">
+        <h1 class="title">제목입니다</h1>
+        <div id="nav">
+            <h1>네비</h1>
+        </div>
+
+    </div>
+    <div id="section">
+        <h1 class="title">제목2입니다</h1>
+        <p>내용입니다</p>
+    </div>
+
+    <form>
+        <input type="text">
+        <input type="password">
+    </form>
+
+
+    <div id="header">
+        <h1 class="title">HEADER</h1>
+    </div>
+    <div id="contents"><img src="star.jpg"></div>
+    <div id="footer"></div>
+
+    <hr>
+
+
+    <h1 id="title" class="bold1">미국 전기차 스타트업 첫 공개</h1>
+
+    <p class="bold">17일 테크 크런치 미국 전문매체 어쩌고</p>
+    <p class="bold1">지난 (2016년) 어쩌고 저쩌고 그랬다 저랬다</p>
+    <h1>footer</h1>
+
+
+
+
+
+
+</body>
+
+</html>
