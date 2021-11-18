@@ -6,7 +6,6 @@ public class CountDownThread extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		super.run();
-	}
 
 	for(
 
