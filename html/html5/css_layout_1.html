@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        div.box{
+            width: 100px;
+            height: 100px;
+
+            border: 3px solid #333;
+            text-align: center;
+            line-height: 100px;
+
+            color: white;
+            font-weight: bold;
+
+            position: absolute;
+        }
+
+        #box1{
+            background-color: red;
+            left: 20px;
+            top: 20px;
+            z-index: 10;
+        }
+        #box2{
+            background-color: green;
+            right: 20px;
+            top: 20px;
+            z-index: 10;
+        }
+        #box3{
+            background-color: blue;
+            left: 20px;
+            bottom: 20px;
+            z-index: 10;
+        }
+        #box4{
+            background-color: black;
+            right: 20px;
+            bottom: 20px;
+            z-index: 10;
+        }
+
+
+
+        #notice{
+            width: 80%;
+            height: 400px;
+
+            background-color: violet;
+            position: absolute;
+            z-index: 99999999999;
+        
+
+        }
+
+
+
+
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <div id="notice"></div>
+    <div id="box1" class="box">bpx1</div>
+    <div id="box2" class="box">bpx2</div>
+    <div id="box3" class="box">bpx3</div>
+    <div id="box4" class="box">bpx4</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+
+    <style>
+        div {
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+
+        #header {
+            width: 800;
+            height: 150px;
+            margin: 0 auto;
+
+        }
+
+        #nav {
+            width: 800;
+            height: 30;
+            margin: 0 auto;
+        }
+
+
+        #wrap {
+            width: 800;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #content {
+            width: 598px;
+            height: 250px;
+            float: left;
+        }
+
+        #aside {
+            width: 198;
+            float: right;
+            height: 100px;
+        }
+        #mainrwap{
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid #666;
+            box-shadow: 10px 10px 10px 10px #aaa;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="mainwrap">
+        <div id="header">HEADER</div>
+        <div id="nav">Navigation</div>
+
+        <div id=wrap>
+            <div id="content">Content</div>
+            <div id="aside">Aside</div>
+        </div>
+
+
+        <div id="footer">Footer</div>
+    </div>
+</body>
+
+</html>
