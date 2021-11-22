@@ -1,0 +1,94 @@
+
+.fimg{position: absolute;
+    top: 15%;
+    left: 455px;
+
+    width: 300px;
+    height: 300px;
+}
+
+.text{
+    position: relative;
+    
+    display: block;
+    top: 300px;
+    width: 300px;
+    height: 400px;
+    left: 355px;
+
+}
+
+.right{
+    position: absolute;
+    float: right;
+    display: block;
+    top: 150px;
+    width: 300px;
+    height: 400px;
+    right: 500px;
+}
+
+input[type=text]{ 
+    padding: 6px;
+    border: 1px solid;
+    width: 95%;
+    border-radius: 3px;
+    font-size: large;
+}
+
+input[type=password]{
+    padding: 6px;
+    margin-top: 3px;
+    border: 1px solid;
+    width: 95%;
+    border-radius: 3px;
+    font-size: large;
+}
+
+input[type=button]{
+    
+
+    width: 97%;
+    height: 48px;
+
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: bold;
+
+    color: white;
+    border: 0px solid white;
+    background-color: rgb(54, 133, 236);
+   
+    margin: 10px auto;  
+
+}
+
+.foot{
+    position: absolute;
+    bottom: 3%;
+    width: 800px;
+    left: 500px;
+    text-align:center
+
+}
+
+#scrt{
+    position: relative;
+    left: 40px;
+}
+
+#sign{
+    width: 50%;
+    height: 48px;
+    position: relative;
+    left: 50px;
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: bold;
+
+    color: white;
+    border: 0px solid white;
+    background-color: rgb(21, 192, 92);
+   
+    margin: 10px auto;  
+}
