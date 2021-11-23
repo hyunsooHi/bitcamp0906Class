@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // alert(111);
+        // alert('작은따옴표큰따옴표다됨');
+        // alert('');
+        console.log(true);
+        console.log(false);
+
+        console.log(33.333, '소수도그냥씀');
+
+        if (true) {
+            console.log('true다');
+        } else {
+            console.log('false다');
+        }
+
+
+        console.log(111 / 0);//개발자 f12 콘솔에서 확인
+        console.log('문자열');
+        console.log('age', 11);
+        console.log('errorCode', 404);
+
+        //숫자연산을위한 산술연산가능
+        //숫자는 정수와 실수 타입 구분하지않음
+
+        //문자열 비교에서 국어사전 앞일수록 값이작다
+        //'가' > 하' 하면 false다
+
+        //자바스크립 변수특징
+        //호이스팅 > 변수 선언과 동시에 초기화 하지 않는경우
+        //자동으로 undefined
+        //변수 선언방법 > var 변수이름
+
+        //var 생명주기
+        //함수단위로 생명주기가 발생
+        //함수밖에서 선언하면 전역변수가 된다
+
+
+
+
+        var num;
+        console.log("num=?",num);
+
+        function fn(){
+            num = 11;
+            var age = 10;
+            console.log(age,"age");
+            console.log(num,'num');
+        }
+        fn();
+        console.log(num,'num');
+        //console.log(age,"age");//함수내 변수라 에러~
+
+
+        //let : 생명주기가 블록{}을 기준으로 생성
+
+        for(var i=0;i<5;i++){//for 에 var쓰면 for을 나가서도 i가 살아있다
+            //var는 함수내에서는 살아있으니까 그래서 let을 쓰는게 좋다
+            console.log(i);
+        }
+        
+        console.log('for문 밖에서 출력하는 i',i);
+        
+        //상수를 만드는 const
+        const no=7;
+        // no =4; error
+        console.log(no);
+        
+        //자바스크립은 변수에 함수도 넣을수있다 왜냐면 변수자체가 주소를 가리키는
+        //객체이기때문이다 변수에 숫자 문자열 bool 함수 객체 ( 배열) 다넣을수있다
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+</body>
+
+</html>
