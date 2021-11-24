@@ -46,35 +46,91 @@
 
 
         var num;
-        console.log("num=?",num);
+        console.log("num=?", num);
 
-        function fn(){
+        function fn() {
             num = 11;
             var age = 10;
-            console.log(age,"age");
-            console.log(num,'num');
+            console.log(age, "age");
+            console.log(num, 'num');
         }
         fn();
-        console.log(num,'num');
+        console.log(num, 'num');
         //console.log(age,"age");//함수내 변수라 에러~
 
 
         //let : 생명주기가 블록{}을 기준으로 생성
 
-        for(var i=0;i<5;i++){//for 에 var쓰면 for을 나가서도 i가 살아있다
+        for (var i = 0; i < 5; i++) {//for 에 var쓰면 for을 나가서도 i가 살아있다
             //var는 함수내에서는 살아있으니까 그래서 let을 쓰는게 좋다
             console.log(i);
         }
-        
-        console.log('for문 밖에서 출력하는 i',i);
-        
+
+        console.log('for문 밖에서 출력하는 i', i);
+
         //상수를 만드는 const
-        const no=7;
+        const no = 7;
         // no =4; error
         console.log(no);
-        
+
         //자바스크립은 변수에 함수도 넣을수있다 왜냐면 변수자체가 주소를 가리키는
         //객체이기때문이다 변수에 숫자 문자열 bool 함수 객체 ( 배열) 다넣을수있다
+
+        /////////////////////////////////////
+        // 변수에서 정의할수있는 타입
+        // 문자열 숫자 불리언 함수 객체 undefined
+
+        var StringVar = 'String';
+        var number = 100;
+        var booleanVar = false;
+        var functionVar = function () { };
+        var objectVar = {}; // 객체 생성 -> {}중괄호 블록을 사용
+        var objArrayVar = [];//배열 객체
+
+
+        //브라우저가 HTML문서의 모든 내용을 메모리에 올리는과정이 끝날때
+        //발생하는 이벤트를 등록하기
+        window.onload = function () {
+            var html = document.body.innerHTML;
+            var text = document.body.innerText;
+
+            console.log('innerHTML : ', html)
+            console.log('innerTEXT : ', text)
+
+            var list = '<ul>';
+            list += '   <li>HTML5</li>';
+            list += '   <li>CSS3</li>';
+            list += '   <li>Javascript</li>';
+
+            list += '</ul>';
+
+            document.body.innerHTML = list;
+        };
+
+
+        //confirm()함수 : 사용자에서 true/false 확인하는 함수
+        var check = confirm('삭제하시겠습니까?');
+        if (check) {
+            alert('삭제햇습니다');
+        }
+
+
+        //삼항연산자
+        //논리값 ? 논리값이true일때 실행할문자 : fal일때 실행할문장
+
+        //짧은조건문
+        //논리값 || false일때만 실행할문장
+        var input = prompt('숫자입력하세요');
+
+        input = input || '100';
+
+        var numberInput = Number(input);
+
+        numberInput = numberInput || 100; 
+
+
+
+
 
 
 
@@ -86,7 +142,9 @@
 
 <body>
 
-
+    <h1>
+        안녕하세요
+    </h1>
 
 
 </body>
