@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //생성자 함수 -> new 키워드를 이용해서 객체를 만들어주는 함수
+        //함수의 이름은 대문자로 시작
+
+        function Student() {
+
+        }
+
+        //객체 생성
+
+        // var st = new Student();
+        // console.log(typeof(st));
+
+        function Student(name, kor, eng, math) {
+            //객체의 속성 정의 , 초기화
+            name = this.name;
+            kor = this.kor;
+            eng = this.eng;
+            math = this.math;
+
+            //총점을 구하는 메소드
+            this.getSum = function () {
+                return this.kor + this.eng + this.math;
+            }
+
+            this.getAvg = function () {
+                return this.getSum() / 3;
+            }
+            //html 문자열을 반환하는 메소드
+
+            this.makeHtml = function () {
+                var rowHtml = '';
+                rowHtml += '     <tr>';
+                rowHtml += '     <td>' + this.name + '</td>\n';
+                rowHtml += '     <td>' + this.kor + '</td>\n';
+                rowHtml += '     <td>' + this.eng + '</td>\n';
+                rowHtml += '     <td>' + this.math + '</td>\n';
+                rowHtml += '     <td>' + this.getSum() + '</td>\n';
+                rowHtml += '     <td>' + this.getAvg() + '</td>\n';
+
+                rowHtml += '     </tr>';
+
+                return rowHtml;
+
+            }
+
+
+
+        }
+
+        var st = new Student('d', 44, 55, 100);
+        console.log(st);
+        console.log(st.makeHtml());
+
+        window.onload = function () {
+            var students = [];
+
+            students.push(new Student('a',55,55,55));
+            students.push(new Student('b',55,41,55));
+            students.push(new Student('c',55,55,44));
+            students.push(new Student('d',55,88,55));
+            students.push(new Student('e',66,55,55));
+            students.push(new Student('f',55,55,33));
+            students.push(new Student('g',55,77,55));
+            students.push(new Student('h',22,55,55));
+            students.push(new Student('o',55,33,99));
+            students.push(new Student('ee',55,55,44));
+            
+            //전체 리스트 출력
+            
+
+
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript object</title>
+
+    <script>
+        //객체 생성 => {}
+        var obj = {};
+        console.log(typeof (obj));
+
+        //속성이 있는 객체 정의
+        var person = {
+            // 속성 정의 => 속성 이름:속성 값(데이터 : 
+            //자바스크립트에서 지원하는 타입의 데이터)
+            name: '손흥민', //여러개의 속성은 , 를 이용해서 추가
+            age: 30,
+            hello: function () {
+                alert('안녕하세요. 저는 ' + this.name + '입니다');
+            },
+            like: ['축구', '게임', '음악']
+        };
+
+        //객체의 속성 참조
+        console.log(person.name);
+        console.log(person.age);
+        //person.hello();
+        for (let i = 0; i < person.like.length; i++) {
+            console.log(person.like[i])
+        }
+
+        console.log(person);
+
+
+        /////////////////////
+        //객체에 동적으로 속성을 추가
+        var player = {};
+
+        console.log(player);
+        //속성 추가
+        player.name = '김흥국';
+        player.play = function () {
+            console.log(this.name + '이 골넣습니다');
+        };
+        console.log(player);
+        player.play();
+        console.log('----------------');
+        //객체를 저장하는 배열
+        //학생들의 과목점수를 저장하는 배열
+        var students = [];
+        //학생별 과목 점수들을 저장하는 객체를 생성 -> 배열에추가
+        students.push({ name: 'a', kor: 100, eng: 100, math: 100 });
+        students.push({ name: 'bbb', kor: 100, eng: 99, math: 100 });
+        students.push({ name: 'c', kor: 100, eng: 55, math: 88 });
+        students.push({ name: 'd', kor: 88, eng: 100, math: 77 });
+        students.push({ name: 'd', kor: 100, eng: 66, math: 66 });
+        students.push({ name: 'f', kor: 55, eng: 100, math: 44 });
+        students.push({ name: 'g', kor: 100, eng: 44, math: 100 });
+        students.push({ name: 'h', kor: 22, eng: 100, math: 33 });
+        students.push({ name: 'i', kor: 100, eng: 22, math: 100 });
+        students.push({ name: 'j', kor: 66, eng: 100, math: 33 });
+
+        //각 요소 students객체 에 메소드를 동적으로 추가해본다
+        //총점을 구해서 반환하는 메소드
+        for (let i = 0; i < students.length; i++) {
+            students[i].getSum = function () {
+                return this.eng + this.kor + this.math;
+            }
+        }
+
+        // 평균을 구해서 반환하는 메소드
+        for (let i = 0; i < students.length; i++) {
+            students[i].getAvg = function () {
+                return this.getSum() / 3
+            }
+        }
+
+
+        console.log(students)
+        //스튜던츠 배열의 0번째 객체에 메소드 추가해본다
+
+        window.onload = function () {
+            var newHtml = '';
+            newHtml += '<table border="1">';
+            newHtml += '   <tr>'
+            newHtml += '      <th>이름</th>';
+            newHtml += '      <th>국</th>';
+            newHtml += '      <th>영</th>';
+            newHtml += '      <th>수</th>';
+            newHtml += '      <th>총점</th>';
+            newHtml += '      <th>평균</th>';
+            newHtml += '   <tr>'
+            
+            for(let i=0;i<students.length;i++){
+            newHtml += '   <tr>'
+            newHtml += '      <td>'+students[i].name+'</td>';
+            newHtml += '      <td>'+students[i].kor+'</td>';
+            newHtml += '      <td>'+students[i].eng+'</td>';
+            newHtml += '      <td>'+students[i].math+'</td>';
+            newHtml += '      <td>'+students[i].getSum()+'</td>';
+            newHtml += '      <td>'+students[i].getAvg()+'</td>';
+            newHtml += '   <tr>'
+            }
+            
+
+            newHtml += '</table>'
+
+            document.body.innerHTML = newHtml;
+        }
+
+
+
+        
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

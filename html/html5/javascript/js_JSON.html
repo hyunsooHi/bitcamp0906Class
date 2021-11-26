@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        window.onload = function () {
+
+
+
+            var book = {
+                name: 'FIRSTJAVA',
+                price: 30000,
+                publisher: '연두에디션'
+
+            }
+
+            console.log(typeof (book), book);//object로나올것
+
+            //객체 -> Json포맷의 문자열
+            // -> 브라우저 화면에 출력
+
+            var jsonStr = JSON.stringify(book);//자바를 제이슨문자열으로 바꿈
+            console.log(typeof (jsonStr), jsonStr);//문자열 타입이됨
+
+
+            document.body.innerHTML = '<h1>' + jsonStr + '</h1>';
+
+            var newStr = { "name": "열혈자바", "price": 28000, "publisher": "오렌지미디어" };
+            //문자열을 자바스크립트의 객체로 변경
+
+            var newObj = JSON.parse(newStr);
+            console.log(typeof(newObj),newObj.name);
+
+        }
+
+
+
+    </script>
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

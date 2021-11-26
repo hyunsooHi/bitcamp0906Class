@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 1.태그 동적 생성
+        // 1태그 엘리먼트 객체를 생성
+        // 2텍스트 노드 객체를 생성 (단일태그제외)
+        // 3태그엘리먼드객체에 텍스트노드객체를 추가
+        // 4태그엘리먼드가 들어가야할 위치의
+        //부모태그를 캐스팅하고 추가
+
+        // 2.동적 파일(html문서에서 이미 만들어져 있는 요소)
+        // 1캐스팅하는 메소드를 
+        
+        window.onload = function(){
+            //h1 태그엘리먼드객체 생성
+            var header = document.createElement('div');
+
+            //텍스트노드생성
+            var text=document.createTextNode('hell o');
+
+            //텍스트노드를 태그엘리먼트로 추가
+            header.appendChild(text);
+
+            //body태그 케스팅하고 header추가
+            document.body.appendChild(header);
+        };
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
