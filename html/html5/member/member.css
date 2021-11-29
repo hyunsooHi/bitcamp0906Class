@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Noto+Sans+KR&family=Quicksand:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.title{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.subtitle{
+    font-family: 'Antonio', sans-serif;
+}
+
+
+input[type]{
+    border:1px solid #aaa;
+    padding: 2px;
+    font-size:1.2em 
+
+}
+
+input[type=text],input[type=password]{
+    width: 220px;
+}
+
+input[type=submit],input[type=reset],input[type=button]{
+    width: 100px;
+    height: 70px;
+}
+
+
+
+
+
+/* header설정 */
+header{
+    padding: 20px;
+    border-bottom: 1px solid #aaa;
+}
+
+header>h1{
+    color: royalblue;
+}
+
+/* 회원정보 입력 폼 설정 */
+#regFormArea{
+    padding: 10px 40px;
+    border-bottom: 1px solid #aaa;
+
+
+}
+
+#regFormArea>form>table td{
+    padding: 2px 5px;/* 상하 좌우 */
+    
+}
+/* 
+#regFormArea input[type]{
+    border:1px solid #aaa;
+    padding: 2px;
+    font-size:1.2em 
+
+}
+
+#regFormArea input[type=text],#regFormArea input[type=password]{
+    width: 220px;
+}
+
+#regFormArea input[type=submit],#regFormArea input[type=reset]{
+    width: 100px;
+    height: 70px;
+} */
+
+div.msg{
+    height: 20px;
+    color: red;
+}
+
+
+/* //////////////////////// */
+/* 회원 리스트 영역 설정 */
+#memberList{
+    padding: 10px 40px;
+    border-bottom: 1px solid #aaa;
+}
+
+#memberList>table{
+    margin: 15px 0;
+    width: 1000px;
+    border-collapse: collapse;
+    /* 1픽셀 보더 */
+}
+
+#memberList>table td,#memberList>table th{
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* //////////////////// */
+/* 회원정보 수정 영역 설정 */
+
+#editFormArea {
+    padding: 20px;
+    background-color: wheat;
+    width: 400px;
+
+    border: 3px solid #666;
+
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    margin-left: -223px;
+
+    display: none;
+}
+
+#wrapHeader{
+    overflow: hidden;
+    border-bottom: 1px solid #aaa;
+    padding: 10px 0;
+
+    margin-bottom: 20px;
+}
+#wrapHeader>h2{
+    float: left;
+}
+#wrapHeader>a{
+    
+    float: right;
+
+    line-height: 32px;
+}
+#editForm td{
+    padding: 5px 10px ;
+    text-align: center;
+}
+
