@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <style>
+        .title {
+            font-size: 200%;
+            font-weight: bold;
+
+        }
+
+        .subtitle {
+            font-size: 150%;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .color_blue {
+            color: blue;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('div').removeClass('title');
+            $('div').addClass('subtitle').addClass('color_blue');
+            $('h3').addClass('title');
+
+            var imgSrc = $('#img').attr("src");//getter : src속성값을 반환
+            console.log('imgSrc', imgSrc);
+
+
+            var aTag = $('a');
+            var aHref = aTag.attr('href');
+            aTag.html(aHref);
+
+
+            //////////////////////////
+            //attr() : setter
+
+
+            $('#img1').attr('src', '../mini1.jpg').attr('width', '200');
+            $('#img1').attr({
+                src: '../mini1.jpg',
+                width: 450,
+                height: function () {
+
+                }
+            });
+
+            $('img').attr('height', function (index) {
+                return 200 + index * 100;
+            });
+
+            //특정 속성 삭제
+            $('img').removeAttr('width');
+
+            //////////////////////////////////////////
+            //css('속성이름') : 해당 속성의 값을 반환
+            var colorValue = $('div').css('color');
+            console.log(colorValue);
+
+            //css() : setter
+            //css('속성이름',값)
+
+            $('h1').css('background-color','blue').css('color','white');
+            //css({}); 여러속성을 한번에 정의
+            
+            var colors = ['red','green','blue','white'];
+            
+            
+            $('h1').css({
+               backgroundColor: '#000',
+               color: function(index){
+                   return colors[index];
+
+               } 
+            });
+
+            /////////////////////////////
+            //html(),text() get이네 겟겟
+            console.log($('#hello').html());//get이네
+            console.log($('#hello').text());
+
+            //html('html string'),text('문자열')
+
+            $('#hello').html('<h1>안녕!</h1>');
+            $('#hello').text('<h1>안녕!</h1>');
+            
+
+
+        });
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <div id="hello">
+        <h2>안녕하세요</h2>
+        <p>인사를합시다!!!</p>
+    </div>
+
+    <h1>ㅎㅇ</h1>
+    <h1>ㅎㅇ</h1>
+    <h1>ㅎㅇ</h1>
+    <h1>ㅎㅇ</h1>
+    
+
+
+    <img id="img1">
+
+    <a href="https://www.naver.com"></a>
+
+
+
+    <img id="img" src="../star.jpg" width="200">
+    <div class="title">안녕하세요</div>
+
+    <h3>반갑습니다.</h3>
+
+
+
+
+
+</body>
+
+</html>
