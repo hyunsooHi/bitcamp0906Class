@@ -17,6 +17,15 @@
             $('h1').remove();//엘리먼트 삭제
             $('p').empty();//엘리먼트 안의 내용삭제, 엘리먼트 태그는 존재
 
+            //동적 html 생성
+            $('<h1></h1>');// h1태그로 에리먼트 객체 생성
+            $('<h1></h1>').html('gg'); //<h1>gg</h1>
+
+            //엘리먼트 요소를 원하는 위치에 추가
+            //appendTo(Target) : 타깃엘리먼트 안의 요소들 마지막 요소 아래에 추가
+            $('<h1></h1>').html('ff').appendTo('#target');
+
+            $('<img>').attr('src','../mini1.jpg').appendTo('#target');
 
         });
 
@@ -28,6 +37,11 @@
 
 </head>
 <body>
+
+    <div id="target">
+        응
+    </div>
+
     <h1>안녕하세요</h1>
     <p>ㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇ</p>
 </body>
